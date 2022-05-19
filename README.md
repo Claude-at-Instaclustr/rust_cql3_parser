@@ -51,4 +51,5 @@ object.  For example `CassandraAST::new("This is an invalid statement");` yields
 `CassandraStatement::Unknown("This is an invalid statement")`.  However, if a statement is 
 partially parsable multiple results are returned.  For example `CassandraAST::new("SELECT * FROM foo WHERE some invalid part");` yields
 `CassandraStatement::Select( select )` where the select is the result of parsing `"SELECT * FROM foo` followed  by 
-`CassandraStatement::Unknown("WHERE some invalid part")`.
+`CassandraStatement::Unknown("SELECT * FROM foo WHERE some invalid part")`.
+
